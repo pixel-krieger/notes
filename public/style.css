@@ -22,11 +22,21 @@ header {
 }
 
 #main {
-  padding: 16px;
+  padding-bottom: 16px;
 }
 
 footer {
   text-align: center;
+}
+
+.notes-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .note {
@@ -35,6 +45,7 @@ footer {
           box-shadow: 0 2px 5px #292F36;
   border-radius: 5px;
   width: 240px;
+  margin: 16px;
   padding: 1em;
 }
 
