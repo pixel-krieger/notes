@@ -1,3 +1,4 @@
+$primary: #4ECDC4;
 $light: #F7FFF7;
 $dark: #292F36;
 $white: #FFFFFF;
@@ -12,9 +13,10 @@ html {
 }
 body {
     background-color: $light;
+    color: $dark;
 }
 header {
-    background-color: #4ECDC4;
+    background-color: $primary;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
     color: $light;
     // margin-bottom: 16px;
@@ -31,17 +33,55 @@ footer {
     justify-content: space-around;
     flex-wrap: wrap;
 }
-.note {
+.card {
     background-color: $light;
-    box-shadow: 0 2px 5px $dark;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
     border-radius: 5px;
     width: 240px;
-    margin: 16px;
+    margin: 16px 10px;
     padding: 1em;
+}
+.note {
     .h2 {
         margin-bottom: 6px;
     }
     p {
         margin-bottom: 10px;
+    }
+    .delete {
+        border: none;
+        background-color: transparent;
+        font-size: $primary;
+        text-transform: uppercase;
+        color: $primary;
+        cursor: pointer;
+        float: right;
+    }
+}
+.create-note {
+    width: 300px;
+    margin: 25px auto;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+    input, textarea {
+        width: 100%;
+        border: none;
+        padding: 0.3em;
+        font-family: inherit;
+        font-size: inherit;
+    }
+    button {
+        position: absolute;
+        right: 16px;
+        display: block;
+        background-color: $primary;
+        color: $light;
+        border: none;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        font-family: inherit;
+        font-size: inherit;
+        cursor: pointer;
     }
 }
