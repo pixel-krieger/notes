@@ -17,7 +17,10 @@ function InputArea(props) {
             title: title,
             content: content
         }
+
         props.onSubmit(objNote);
+        setTitle("");
+        setContent("");
         evt.preventDefault();
     }
 
@@ -30,6 +33,7 @@ function InputArea(props) {
                     placeholder="Title"
                     value={title}
                     onChange={updateTitle}
+                    autoFocus="true"
                 />
                 <textarea
                     name="content"
@@ -39,6 +43,7 @@ function InputArea(props) {
                     onChange={updateContent}
                 />
                 <button
+                    type="submit"
                     onClick={handleSubmit}>Add</button>
             </form>
         </div>
