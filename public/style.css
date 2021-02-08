@@ -93,10 +93,11 @@ footer {
   color: #F7FFF7;
   border: none;
   border-radius: 50%;
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   font-family: inherit;
   font-size: inherit;
+  line-height: unset;
   cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */

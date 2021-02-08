@@ -1,8 +1,12 @@
 import React, { useState } from "react";
+import Zoom from '@material-ui/core/Zoom';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
 
 function InputArea(props) {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
+    const [wasClicked, setWasClicked] = useState(false);
 
     function updateTitle(evt) {
         setTitle(evt.target.value);
@@ -10,6 +14,10 @@ function InputArea(props) {
 
     function updateContent(evt) {
         setContent(evt.target.value);
+    }
+
+    function handleClick(params) {
+        setWasClicked(true);
     }
 
     function handleSubmit(evt) {
@@ -33,18 +41,21 @@ function InputArea(props) {
                     placeholder="Title"
                     value={title}
                     onChange={updateTitle}
-                    autoFocus="true"
+                    hidden={!wasClicked}
                 />
                 <textarea
                     name="content"
                     placeholder="This is a note."
-                    rows="3"
+                    rows={wasClicked ? "3" : "1"}
+                    onClick={handleClick}
                     value={content}
                     onChange={updateContent}
                 />
-                <button
-                    type="submit"
-                    onClick={handleSubmit}>Add</button>
+                <Zoom in={wasClicked}>
+                <Fab type="submit" onClick={handleSubmit}>
+                    <AddIcon />
+                </Fab>
+                </Zoom>
             </form>
         </div>
     );
